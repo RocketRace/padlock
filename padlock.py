@@ -80,7 +80,8 @@ class AST:
     '''
     The AST object containing Padlock source code.
     '''
-    instructions = []
+    def __init__(self):
+        self.instructions = []
 
     def __repr__(self):
         return "<Padlock AST object>"
@@ -113,7 +114,7 @@ class AST:
             x = x[i]
         x.append(value)
 
-def parse(stream: str, *, utf8_names: bool = False, ascii_symbols: bool = False) -> List:
+def parse(stream: str, *, utf8_names: bool = False, ascii_symbols: bool = False) -> AST:
     '''
     Parses a stream of Padlock symbols into an AST.
 
